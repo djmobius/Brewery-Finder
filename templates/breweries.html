@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breweries in {{ state }}</title>
+</head>
+<body>
+    <h1>Breweries in {{ state }}</h1>
+    <ul>
+        {% for brewery in breweries %}
+            <li>{{ brewery['name'] }} - {{ brewery['city'] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Search again</a>
+</body>
+</html>

@@ -14,16 +14,18 @@
 - pip (Python package installer)
 - Install required packages using:
 
-  ```bash
-  pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
+```
 
 ## Installation
 
 1. Clone the repository:
 
-   ```bash
+```bash
    git clone https://github.com/yourusername/brewery-finder.git
    cd brewery-finder
+```
 
 ## Create a Virtual Environment
    python -m venv venv

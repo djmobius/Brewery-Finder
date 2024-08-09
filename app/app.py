@@ -9,19 +9,22 @@ def home():
 
 @app.route('/get_breweries', methods=['POST'])
 def get_breweries():
-    state = request.form['state']
+    state = request.form.get('state')
     postal_code = request.form.get('postal_code')
     brewery_type = request.form.get('brewery_type')
 
-    url = f'https://api.openbrewerydb.org/breweries?by_state={state}'
+    # Build the URL based on available inputs
+    url = 'https://api.openbrewerydb.org/breweries?'
+    if state:
+        url += f'by_state={state}&'
     if postal_code:
-        url += f'&by_postal={postal_code}'
+        url += f'by_postal={postal_code}&'
     if brewery_type:
-        url += f'&by_type={brewery_type}'
+        url += f'by_type={brewery_type}&'
 
-    response = requests.get(url)
+    response = requests.get(url.rstrip('&'))
     breweries = response.json()
-    return render_template('breweries.html', breweries=breweries, state=state)
+    return render_template('breweries.html', breweries=breweries)
 
 if __name__ == '__main__':
     app.run(debug=True)

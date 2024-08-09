@@ -4,31 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Breweries</title>
-    <script>
-        function loadCities() {
-            const state = document.getElementById('state').value;
-            if (state) {
-                fetch(`/get_cities?state=${state}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        const citySelect = document.getElementById('city');
-                        citySelect.innerHTML = '<option value="">All Cities</option>';
-                        data.forEach(city => {
-                            const option = document.createElement('option');
-                            option.value = city;
-                            option.textContent = city;
-                            citySelect.appendChild(option);
-                        });
-                    });
-            }
-        }
-    </script>
 </head>
 <body>
-    <h1>Find Breweries in Your State</h1>
+    <h1>Find Breweries</h1>
     <form action="/get_breweries" method="POST">
-        <label for="state">Select State:</label>
-        <select id="state" name="state" onchange="loadCities()" required>
+        <label for="state">Select State (optional):</label>
+        <select id="state" name="state">
             <option value="">Select a state</option>
             <option value="alabama">Alabama</option>
             <option value="alaska">Alaska</option>
@@ -83,9 +64,8 @@
             <option value="wyoming">Wyoming</option>
         </select>
         <br><br>
-        <label for="postal_code">Enter Postal Code:</label>
+        <label for="postal_code">Enter Postal Code (optional):</label>
         <input type="text" id="postal_code" name="postal_code">
-        </select>
         <br><br>
         <label for="brewery_type">Select Brewery Type:</label>
         <select id="brewery_type" name="brewery_type">

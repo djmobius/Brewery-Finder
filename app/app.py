@@ -24,7 +24,8 @@ def get_breweries():
 
     response = requests.get(url.rstrip('&'))
     breweries = response.json()
-    return render_template('breweries.html', breweries=breweries)
+    return render_template('breweries.html', breweries=breweries, state=state, postal_code=postal_code)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

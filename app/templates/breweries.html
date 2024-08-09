@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breweries in {{ state }}</title>
+    <title>Breweries</title>
 </head>
 <body>
-    <h1>Breweries in {{ state }}</h1>
+    <h1>
+        Breweries Found
+        {% if state and state != "" %}
+            in {{ state }}
+        {% elif postal_code and postal_code != "" %}
+            in Postal Code {{ postal_code }}
+        {% endif %}
+    </h1>
     <ul>
         {% for brewery in breweries %}
-            <li>{{ brewery['name'] }} - {{ brewery['city'] }}</li>
+            <li>
+                <a href="https://www.google.com/maps/search/?api=1&query={{ brewery['name'] }}+{{ brewery['street'] }}+{{ brewery['city'] }}+{{ brewery['state'] }}" target="_blank">
+                    {{ brewery['name'] }}
+                </a> - {{ brewery['city'] }}
+            </li>
         {% endfor %}
     </ul>
     <a href="/">Search again</a>

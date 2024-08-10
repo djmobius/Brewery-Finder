@@ -3,7 +3,7 @@
 {% block content %}
     <h2>Find Breweries</h2>
     <form action="/get_breweries" method="POST">
-        <label for="state">Select State (optional):</label>
+        <label for="state">Select State:</label>
         <select id="state" name="state">
             <option value="">Select a state</option>
             <option value="alabama">Alabama</option>
@@ -59,7 +59,7 @@
             <option value="wyoming">Wyoming</option>
         </select>
         <br><br>
-        <label for="postal_code">Enter Postal Code (optional):</label>
+        <label for="postal_code">Enter Postal Code:</label>
         <input type="text" id="postal_code" name="postal_code">
         <br><br>
         <label for="brewery_type">Select Brewery Type:</label>
@@ -75,6 +75,12 @@
             <option value="proprietor">Proprietor</option>
         </select>
         <br><br>
-        <button type="submit">Search</button>
+        <button type="submit" style="background: none; border: none; cursor: pointer; padding: 0;">
+            <img src="{{ url_for('static', filename='images/beer-mug.png') }}" alt="Search" style="width: 100px; height: 100px;">
+        </button>
+        <br><br>
+        <button type="submit" style="font-size: 18px; padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer;">
+            Search
+        </button>
     </form>
 {% endblock %}

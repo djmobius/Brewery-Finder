@@ -17,19 +17,16 @@ def get_breweries():
     postal_code = request.form.get('postal_code')
     brewery_type = request.form.get('brewery_type')
 
-    # Build the URL based on available inputs
-    url = 'https://api.openbrewerydb.org/breweries?'
+    # Base URL
+    url = 'https://api.openbrewerydb.org/breweries?per_page=200'
+
     if state:
-        url += f'by_state={state}&'
+        url += f'&by_state={state}'
     if postal_code:
-        url += f'by_postal={postal_code}&'
+        url += f'&by_postal={postal_code}'
     if brewery_type:
-        url += f'by_type={brewery_type}&'
+        url += f'&by_type={brewery_type}'
 
-    response = requests.get(url.rstrip('&'))
+    response = requests.get(url)
     breweries = response.json()
-    return render_template('breweries.html', breweries=breweries, state=state, postal_code=postal_code)
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
+    return render_template('breweries.html', breweries=breweries)

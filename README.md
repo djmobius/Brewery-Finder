@@ -1,12 +1,12 @@
-# Brewery-Finder
- Brewery Finder is a Flask-based web application that allows users to find breweries in a selected state, with additional filtering options for city and brewery type. The application uses the OpenBreweryDB API to fetch brewery information.
+# Brewery Finder
 
+Brewery Finder is a Flask-based web application that allows users to find breweries in a selected state, with additional filtering options for city and brewery type. The application uses the OpenBreweryDB API to fetch brewery information.
 
 ## Features
 
-- Select a state from a dropdown menu or enter a postal code. 
-- Filter results by city and brewery type.
-- Display a list of breweries matching the selected criteria.
+- Select a state or enter a postal code to find breweries.
+- Filter results by brewery type.
+- View breweries on Google Maps or visit their website directly from the results.
 
 ## Prerequisites
 
@@ -22,10 +22,28 @@ pip install -r requirements.txt
 
 1. Clone the repository:
 
+You can clone the repository via GitHub or the command line.
+
+Via GitHub
+   1. Navigate to the Brewery Finder GitHub page.
+   2. Click on the "Code" button.
+   3. Choose to clone with HTTPS, SSH, or GitHub CLI.
+   4. Copy the provided URL.
+   5. Open your terminal or command line and use the git clone command with the copied URL.
+
+Via Command Line
+   1. Open your terminal or command line.
+   2. Enter the following command to clone the repository:
+
 ```bash
-   git clone https://github.com/yourusername/brewery-finder.git
-   cd brewery-finder
+   git clone https://github.com/djmobius/Brewery-Finder.git
 ```
+   3. Navigate into the cloned repository:
+
+```bash
+   cd Brewery-Finder
+```
+
 
 ## Create a Virtual Environment
    
@@ -72,14 +90,16 @@ Select a state, optionally filter by city and brewery type, and view the list of
 
 ## Project Structure
 
-app/app.py: The main Flask application file.
+app.py: The main Flask application file.
 
 templates/: Directory containing the HTML templates.
+   layout.html: The base layout for the website.
+   index.html: The main page with the form.
+   breweries.html: The page displaying the list of breweries.
+   about.html: The page explaining how the app works.
 
-index.html: The main page with the brewery search form.
-
-breweries.html: The page displaying the list of 
-breweries.
+static/: Directory for static files like images.
+   images/: Directory containing image assets like beer-mug.png.
 
 requirements.txt: Python dependencies required for the project.
 

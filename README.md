@@ -4,7 +4,7 @@
 
 ## Features
 
-- Select a state from a dropdown menu.
+- Select a state from a dropdown menu or enter a postal code. 
 - Filter results by city and brewery type.
 - Display a list of breweries matching the selected criteria.
 
@@ -28,23 +28,42 @@ pip install -r requirements.txt
 ```
 
 ## Create a Virtual Environment
-   python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   
+   To create a virtual environment for your Flask app using Anaconda, you can use the following command:
+
+   ```bash
+   conda create --name myenv python=3.9
+   ```
+
+   Replace myenv with your desired environment name and 3.9 with the Python version you want to use. After creating the environment, activate it using:
+
+   ```bash
+   conda activate myenv
+   ```
 
 ## Install the required Python packages:
+   
+   Install the required packages using:
 
-pip install -r requirements.txt
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 
 ## Set up environment variables by creating a .env file:
-
-FLASK_APP=app.py
-FLASK_ENV=development
+   
+   ```bash
+   FLASK_APP=app.py
+   FLASK_ENV=development
+   ```
 
 ## Usage
 
 Run the Flask application:
-flask run
+
+   ```bash
+   flask run
+   ```
 
 Open a web browser and navigate to http://127.0.0.1:5000/.
 
@@ -53,11 +72,11 @@ Select a state, optionally filter by city and brewery type, and view the list of
 
 ## Project Structure
 
-app.py: The main Flask application file.
+app/app.py: The main Flask application file.
 
 templates/: Directory containing the HTML templates.
 
-index.html: The main page with the form.
+index.html: The main page with the brewery search form.
 
 breweries.html: The page displaying the list of 
 breweries.
@@ -68,7 +87,8 @@ requirements.txt: Python dependencies required for the project.
 
 ## API
 
-This project uses the OpenBreweryDB API to fetch brewery data.
+This project uses the free OpenBreweryDB API to fetch brewery data.
+https://jrbourbeau.github.io/openbrewerydb-python/
 
 ## License
 

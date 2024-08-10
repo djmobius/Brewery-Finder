@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breweries</title>
-</head>
-<body>
-    <h1>
+{% extends "layout.html" %}
+
+{% block content %}
+    <h2>
         Breweries Found
         {% if state and state != "" %}
             in {{ state }}
         {% elif postal_code and postal_code != "" %}
             in Postal Code {{ postal_code }}
         {% endif %}
-    </h1>
+    </h2>
     <ul>
         {% for brewery in breweries %}
             <li>
@@ -24,5 +19,5 @@
         {% endfor %}
     </ul>
     <a href="/">Search again</a>
-</body>
-</html>
+{% endblock %}
+

@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find Breweries</title>
-</head>
-<body>
-    <h1>Find Breweries</h1>
+{% extends "layout.html" %}
+
+{% block content %}
+    <h2>Find Breweries</h2>
     <form action="/get_breweries" method="POST">
         <label for="state">Select State (optional):</label>
         <select id="state" name="state">
@@ -82,5 +77,4 @@
         <br><br>
         <button type="submit">Search</button>
     </form>
-</body>
-</html>
+{% endblock %}

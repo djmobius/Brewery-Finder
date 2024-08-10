@@ -95,17 +95,53 @@ app.py: The main Flask application file.
 templates/: Directory containing the HTML templates.
 
    layout.html: The base layout for the website.
+
    index.html: The main page with the form.
+
    breweries.html: The page displaying the list of breweries.
+
    about.html: The page explaining how the app works.
 
 static/: Directory for static files like images.
 
    images/: Directory containing image assets like beer-mug.png.
 
+tests/: Contains the test files needed for pytest
+
+   test_app.py: Tests that the API calls work for the app
+
+   __init__.py: allows the pytest to run
+
 requirements.txt: Python dependencies required for the project.
 
 .env: Environment variables for Flask.
+
+
+## Testing with pytest
+
+This project uses `pytest` for testing. `pytest` is a simple and scalable test framework for Python.
+
+### Running Tests
+
+To run the tests, follow these steps:
+
+1. Ensure you have `pytest` installed. If not, install it using:
+
+```bash
+   pip install pytest
+   ```
+
+2. Navigate to the root directory of the project:
+   
+```bash
+   cd /path/to/Brewery-Finder
+   ```
+
+3. Run the tests using pytest:
+
+ ```bash
+   pytest
+   ```
 
 ## API
 

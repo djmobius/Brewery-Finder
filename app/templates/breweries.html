@@ -1,6 +1,17 @@
 {% extends "layout.html" %}
 
 {% block content %}
+    <style>
+        /* Remove underline from links */
+        a {
+            text-decoration: none;
+        }
+
+        /* Add hover effect to indicate clickable links */
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
     <h2>
         Breweries Found
         {% if state and state != "" %}
@@ -11,13 +22,20 @@
     </h2>
     <ul>
         {% for brewery in breweries %}
-            <li>
-                <a href="https://www.google.com/maps/search/?api=1&query={{ brewery['name'] }}+{{ brewery['street'] }}+{{ brewery['city'] }}+{{ brewery['state'] }}" target="_blank">
-                    {{ brewery['name'] }}
-                </a> - {{ brewery['city'] }}
+            <li style="margin-bottom: 10px;">
+                <span>
+                    {{ brewery['name'] }} - {{ brewery['city'] }}
+                </span>
+                <a href="https://www.google.com/maps/search/?api=1&query={{ brewery['name'] }}+{{ brewery['street'] }}+{{ brewery['city'] }}+{{ brewery['state'] }}" target="_blank" style="margin-left: 10px;">
+                    <i class="fas fa-map-marker-alt"></i>
+                </a>
+                {% if brewery['website_url'] %}
+                    <a href="{{ brewery['website_url'] }}" target="_blank" style="margin-left: 10px;">
+                        <i class="fas fa-link"></i>
+                    </a>
+                {% endif %}
             </li>
         {% endfor %}
     </ul>
     <a href="/">Search again</a>
 {% endblock %}
-

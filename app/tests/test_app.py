@@ -18,3 +18,5 @@ def test_get_breweries(client):
     response = client.post('/get_breweries', data={'state': 'california'})
     assert response.status_code == 200
     assert b'10 Barrel Brewing Co' in response.data
+    #When testing the API pull from california, 10 Barrel Brewing Co is the first one.
+    #If we see this string then we know the test was successful

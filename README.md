@@ -93,12 +93,14 @@ Select a state, optionally filter by city and brewery type, and view the list of
 app.py: The main Flask application file.
 
 templates/: Directory containing the HTML templates.
+
    layout.html: The base layout for the website.
    index.html: The main page with the form.
    breweries.html: The page displaying the list of breweries.
    about.html: The page explaining how the app works.
 
 static/: Directory for static files like images.
+
    images/: Directory containing image assets like beer-mug.png.
 
 requirements.txt: Python dependencies required for the project.

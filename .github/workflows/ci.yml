@@ -15,5 +15,12 @@ jobs:
         environment-file: environment.yml
         auto-activate-base: false
 
-    - name: Activate Conda environment
-      run: conda activate brewery-finder && pytest
+    - name: Initialize Conda
+      shell: bash -l {0}
+      run: conda init bash
+
+    - name: Activate Conda environment and run tests
+      shell: bash -l {0}
+      run: |
+        conda activate brewery-finder
+        pytest

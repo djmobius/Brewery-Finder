@@ -17,9 +17,10 @@ def get_breweries():
     postal_code = request.form.get('postal_code')
     brewery_type = request.form.get('brewery_type')
 
-    # Base URL
+    # Base URL: The max API call is 200. So we set this manually:
     url = 'https://api.openbrewerydb.org/breweries?per_page=200'
 
+    #If statement checks the search criteria and applys this to the API call
     if state:
         url += f'&by_state={state}'
     if postal_code:

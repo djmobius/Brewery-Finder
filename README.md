@@ -125,7 +125,7 @@ This project uses `pytest` for testing. `pytest` is a simple and scalable test f
 
 To run the tests, follow these steps:
 
-1. Ensure you have `pytest` installed. If not, install it using:
+1. Ensure you have `pytest` installed. (If you ran the "pip install -r requirements.txt, it should already be installed) If not, install it using:
 
 ```bash
    pip install pytest
@@ -142,6 +142,11 @@ To run the tests, follow these steps:
  ```bash
    pytest
    ```
+Pytest will run 2 tests:
+
+   1. This test will make a web call to the flask app to ensure that it is running and returning a 200 status code. 
+
+   2. The second test queries the OpenbreweryDB using the API. It searches for the state California and if it returns the first brewery it is marked as successful.  
 
 ## API
 

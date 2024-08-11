@@ -11,7 +11,10 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.11'  # Use Python 3.11 or another stable version
+        python-version: '3.11'  # Use a stable version
+
+    - name: Install system dependencies  #Was failing the test without this installed first
+      run: sudo apt-get install gfortran libopenblas-dev liblapack-dev
 
     - name: Install dependencies
       run: |

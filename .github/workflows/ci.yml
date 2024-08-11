@@ -15,5 +15,8 @@ jobs:
         environment-file: environment.yml
         auto-activate-base: false
 
+    - name: Activate environment
+      run: source activate brewery-finder
+
     - name: Run tests
       run: pytest
